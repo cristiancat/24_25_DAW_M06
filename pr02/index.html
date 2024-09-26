@@ -9,12 +9,24 @@
 </head>
 
 <body>
+    <audio controls id="audio">
+        <source src="DRUMC0.WAV" type="audio/wav">
+    </audio>
+    <button onclick="playAudio()"> PLAY</button>
+    <button onclick="playAudio2()"> PLAY 2</button>
+
+
+
     <div id="div_text"></div>
     <div id="resultat"></div>
-    Numero <input id="input_numero" value="99" />
+    Numero1 <input id="input_numero" value="99" />
+    Numero2 <input id="input_numero2" />
     <button onclick="
    sumaValors();
    "> CLICK </button>
+
+<div id="llista_propietats"></div>
+
 </body>
 
 </html>
