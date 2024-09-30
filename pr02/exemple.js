@@ -33,6 +33,36 @@ function playAudio2(){
     audio.src="FANFARE1.WAV";
     audio.play();
 }
+function clk_btn_stopAudio(){
+    audio.pause()
+    audio.currentTime=0;
+}
+function clk_btn_mute(){
+    audio.muted=!audio.muted;
+}
+function clk_btn_volUp(){
+    try{
+        audio.volume +=0.2
+    }catch(e){
+        audio.volume=1
+    }    
+    document.getElementById("vol").value=audio.volume;
+}
+function clk_btn_volDown(){
+    try{
+        audio.volume-=0.2
+    }catch(e){
+        audio.volume=0
+    }
+    document.getElementById("vol").value=audio.volume;
+}
+
+function change_inp_vol(){
+    audio.volume= document.getElementById("vol").value;
+}
+
+
+
 
 
 // 1.	Crea un document HTML amb un div amb id “llista_propietats”. Programa amb 

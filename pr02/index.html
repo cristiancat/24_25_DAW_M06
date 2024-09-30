@@ -14,7 +14,14 @@
     </audio>
     <button onclick="playAudio()"> PLAY</button>
     <button onclick="playAudio2()"> PLAY 2</button>
-
+    <br />
+    <button onclick="clk_btn_stopAudio()"> STOP</button>
+    <button onclick="clk_btn_mute()">MUTE</button>
+    <button onclick="clk_btn_volUp()">VOL+</button>
+    <button onclick="clk_btn_volDown()">VOL-</button>
+    <br />
+    <input type="range" min="0" max="1" step="0.2" id="vol"
+    onchange="change_inp_vol()" />
 
 
     <div id="div_text"></div>
