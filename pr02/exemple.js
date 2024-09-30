@@ -25,8 +25,22 @@ function sumaValors(){
 }
 
 let audio = document.getElementById("audio");
+audio.addEventListener("canplaythrough", function(){
+    timer.max=audio.duration;
+    timer_span.max=audio.duration;
+    let ref_interval = window.setInterval(function(){
+        timer.value = audio.currentTime;
+        timer_span.innerText=audio.currentTime
+        if(audio.currentTime== audio.duration){
+            window.clearInterval(ref_interval)
+        }
+    } ,1000)
+})
+const timer = document.getElementById("timer");
+const timer_span=document.getElementById("timer_span");
 
 function playAudio(){
+    audio.src="DRUMC0.WAV";
     audio.play();
 }
 function playAudio2(){
@@ -60,6 +74,12 @@ function clk_btn_volDown(){
 function change_inp_vol(){
     audio.volume= document.getElementById("vol").value;
 }
+
+window.setTimeout(
+    function(){
+        document.getElementById("timer_span").innerText = audio.duration;
+    },500
+);
 
 
 
